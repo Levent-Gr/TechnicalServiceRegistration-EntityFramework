@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PersonelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Personel">
+          <Key>
+            <PropertyRef Name="M_id" />
+          </Key>
+          <Property Name="M_id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="M_Ad" Type="varchar" MaxLength="20" />
+          <Property Name="M_Soyad" Type="varchar" MaxLength="20" />
+          <Property Name="M_Tel" Type="varchar" MaxLength="20" />
+          <Property Name="Tutar" Type="smallint" />
+          <Property Name="UrunAd" Type="nchar" MaxLength="15" />
+          <Property Name="SeriNo" Type="nchar" MaxLength="15" />
+          <Property Name="Sikayet" Type="nchar" MaxLength="50" />
+          <Property Name="Islem" Type="nchar" MaxLength="50" />
+          <Property Name="Islem_Durumu" Type="nchar" MaxLength="20" />
+          <Property Name="Odeme_Durumu" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="PersonelModelStoreContainer">
+          <EntitySet Name="Tbl_Personel" EntityType="Self.Tbl_Personel" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PersonelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Personel">
+          <Key>
+            <PropertyRef Name="M_id" />
+          </Key>
+          <Property Name="M_id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="M_Soyad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="M_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Tutar" Type="Int16" />
+          <Property Name="UrunAd" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="SeriNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Sikayet" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Islem" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Islem_Durumu" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Odeme_Durumu" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PersonelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Personel" EntityType="Self.Tbl_Personel" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PersonelModelStoreContainer" CdmEntityContainer="PersonelEntities">
+          <EntitySetMapping Name="Tbl_Personel">
+            <EntityTypeMapping TypeName="PersonelModel.Tbl_Personel">
+              <MappingFragment StoreEntitySet="Tbl_Personel">
+                <ScalarProperty Name="M_id" ColumnName="M_id" />
+                <ScalarProperty Name="M_Ad" ColumnName="M_Ad" />
+                <ScalarProperty Name="M_Soyad" ColumnName="M_Soyad" />
+                <ScalarProperty Name="M_Tel" ColumnName="M_Tel" />
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="Sikayet" ColumnName="Sikayet" />
+                <ScalarProperty Name="Islem" ColumnName="Islem" />
+                <ScalarProperty Name="Islem_Durumu" ColumnName="Islem_Durumu" />
+                <ScalarProperty Name="Odeme_Durumu" ColumnName="Odeme_Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
